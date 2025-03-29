@@ -30,8 +30,6 @@ const getImage = async (req, res) => {
     if (!images || images.length === 0) {
       return res.status(404).json({ message: "No content found" });
     }
-
-    console.log(images);
     res.status(200).json({ success: true, images });
   } catch (error) {
     console.error("Error fetching content:", error.message);
