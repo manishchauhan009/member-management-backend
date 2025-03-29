@@ -9,8 +9,6 @@ const addContent = async (req, res) => {
 
     const { title, body, tags } = req.body;
 
-    console.log("Received Data:", { title, body, tags, user: req.user });
-
     // Convert tags to an array if it's a string
     const tagsArray = Array.isArray(tags) ? tags : tags.split(",").map(tag => tag.trim());
 
