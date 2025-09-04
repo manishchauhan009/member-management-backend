@@ -58,11 +58,9 @@ const login = async (req, res) => {
 
     try {
         const user = await User.findOne({ username });
-        console.log("Fetched user:", user);
 
         if (user) {
             const isPasswordCorrect = await bcrypt.compare(password, user.password);
-            // console.log("Password match result:", isPasswordCorrect);
 
             if (isPasswordCorrect) {
                 const token = jwt.sign(

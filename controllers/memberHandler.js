@@ -36,7 +36,6 @@ const fetchMembers = async (req, res) => {
 
 const checkUsername = async (req, res) => {
   const userName = req.body.username;
-  console.log("Checking username:", userName);
 
   try {
     const user = await User.findOne({ username: userName });

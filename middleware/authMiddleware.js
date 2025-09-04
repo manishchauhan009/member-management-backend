@@ -50,7 +50,6 @@ const isAdmin = async (req, res, next) => {
     }
 
     req.user = decoded;  // Attach decoded token to request object
-    console.log("Admin Authorized:", decoded);
     next();
   } catch (error) {
     console.error("Authorization Error:", error);
